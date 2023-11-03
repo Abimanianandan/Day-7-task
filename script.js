@@ -50,8 +50,8 @@ request5.send();
 request5.onload=function(){
     let data=request5.response;
     let result=JSON.parse(data);
-    let ans4=result.filter((a)=>a.currencies.symbol==="$");
-    let final2=ans4.map((ele)=>console.log(ele.name.common));
+    let currency=result.filter((value)=>value.currencies && value.currencies.USD)
+    currency.forEach((value)=>console.log(value.name.common));
 }
 
 
